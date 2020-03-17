@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
+<!-- Bootstrap core CSS -->
+<link href="http://code.ionicframework.com/1.3.3/css/ionic.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/cover.css" rel="stylesheet">
+<link rel="stylesheet" href="css/stylesheet.css">
+
+<script src="http://code.ionicframework.com/1.3.3/js/ionic.bundle.min.js"></script>
 
 <head>
 	<meta charset="utf-8">
 	<title>Projet 6</title>
 </head>
 
-<body>
-	<p>Projet 6</p>
-</body>
+<body class="text-center" ng-controller="MainCtrl">
+
+	<body class="text-center" ng-controller="MainCtrl">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="masthead mb-auto">
+			</header>
+
+			<main role="main" class="inner cover pt-5">
+				<h1>Workshop - Flash et Fond</h1>
+				<!-- <p class="lead">Interactive Media Designer</p> -->
+			</main>
+		</div>
+
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script>
+			function openNav() {
+				document.getElementById("mySidebar").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidebar").style.width = "0";
+				document.getElementById("main").style.marginLeft = "0";
+			}
+		</script>
+		<script src="js/galerie.js" charset="utf-8"></script>
+		<script src="js/animphoto.js" charset="utf-8"></script>
+	</body>
 
 </html>
