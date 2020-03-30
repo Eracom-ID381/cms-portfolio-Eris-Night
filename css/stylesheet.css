@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Merienda+One|Quintessential&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bellota:400,700&display=swap');
 
+:root {
+    --base-light: white;
+    --base-dark: black;
+    --transparent: rgba(0, 0, 0, 0);
+    --red: #A80404;
+}
+
 mb-auto,
 .my-auto {
     margin-bottom: 0 !important;
@@ -9,11 +16,16 @@ mb-auto,
 body {
     min-height: 100%;
     scroll-behavior: smooth;
-    overflow-y: scroll;
     height: 100%;
     margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+}
+
+body#index {
+    overflow-y: hidden;
 }
 
 /* .mb-auto,
@@ -25,14 +37,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: white;
+    color: var(--base-light);
 }
 
 h1 {
     font-size: 3rem;
     word-break: break-all;
     padding: 0 0 0.6em 0;
-    color: white;
+    color: var(--base-light);
 }
 
 h2 {
@@ -58,7 +70,7 @@ p {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
-    border: 0px solid white;
+    border: 0px solid var;
     float: left;
 }
 
@@ -71,21 +83,21 @@ p {
 
 .btn-primary {
     border: 2px solid;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
+    background-color: var(--transparent);
+    color: var(--base-light);
 }
 
 .btn-primary:hover {
     border: 2px solid;
-    background-color: white;
-    color: black;
+    background-color: var(--base-light);
+    color: var(--base-dark);
 }
 
 .btn-sorting {
     border: none;
     outline: none;
     padding: 12px 16px;
-    background-color: white;
+    background-color: var(--base-light);
     cursor: pointer;
     border-radius: 5px;
 }
@@ -97,8 +109,8 @@ p {
 
 /* Add a dark background color to the active button */
 .btn-sorting.active {
-    background-color: #A80404;
-    color: white;
+    background-color: var(--red);
+    color: var(--base-light);
 }
 
 .bd-placeholder-img {
@@ -170,11 +182,30 @@ p {
     background-position: center center;
 }
 
+.menu-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: var(--base-dark);
+    background: var(--base-light);
+    line-height: 50px;
+    z-index: 10;
+    opacity: 0.5;
+}
+
+.menu-toggle:focus, .menu-toggle:hover {
+    color: var(--base-dark);
+    opacity: 1;
+}
+
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: black;
-    color: white;
+    background-color: var(--base-dark);
+    color: var(--base-light);
     padding: 10px 15px;
     border: none;
 }
@@ -190,7 +221,74 @@ p {
     padding: 0 4px;
 }
 
-.sidebar {
+/* Side Menu */
+#sidebar-wrapper {
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    transition: all 0.4s ease 0s;
+    transform: translateX(250px);
+    background: var(--base-light);
+    color: var(--base-dark);
+    opacity: 0.95;
+    font-family: 'Merienda One', cursive;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li.sidebar-nav-item a {
+    display: block;
+    text-decoration: none;
+    color: var(--base-dark);
+    padding: 15px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: white;
+    background: black;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+    font-size: 1.2rem;
+    background: rgba(52, 58, 64, 0.1);
+    height: 80px;
+    line-height: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+    color: var(--base-dark);
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+    color: var(--base-dark);
+    background: none;
+}
+
+#sidebar-wrapper.active {
+    right: 250px;
+    width: 250px;
+    transition: all 0.4s ease 0s;
+}
+
+/* .sidebar {
     height: 100%;
     width: 0;
     position: fixed;
@@ -223,8 +321,7 @@ p {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
-
+} */
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {
