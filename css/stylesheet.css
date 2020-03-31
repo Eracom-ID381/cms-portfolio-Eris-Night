@@ -28,7 +28,7 @@ body#index {
     overflow-y: hidden;
     height: 100%;
     background-color: black;
-    background-image: url("/source/photo/perso/nb/ambrevisinand.jpg");
+    background-image: url("../source/photo/perso/nb/ambrevisinand.jpg");
     background-size: cover;
 }
 
