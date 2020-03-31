@@ -26,6 +26,25 @@ body {
 
 body#index {
     overflow-y: hidden;
+    height: 100%;
+    background-color: black;
+    background-image: url("/source/photo/perso/nb/ambrevisinand.jpg");
+    background-size: cover;
+}
+
+.bg-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    padding: 8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .mb-auto,
@@ -153,6 +172,10 @@ p {
 
 .footer {
     flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    z-index: 3;
 }
 
 .icon {
@@ -224,7 +247,7 @@ p {
 /* Side Menu */
 #sidebar-wrapper {
     position: fixed;
-    z-index: 2;
+    z-index: 4;
     right: 0;
     width: 250px;
     height: 100%;
@@ -322,6 +345,13 @@ p {
     font-size: 36px;
     margin-left: 50px;
 } */
+.white {
+    background: var(--base-light);
+    opacity: 0.7;
+    height: 100%;
+    position: relative;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {
@@ -465,16 +495,6 @@ p {
     background: black;
 }
 
-@keyframes zoom {
-    from {
-        transform: scale(0)
-    }
-
-    to {
-        transform: scale(1)
-    }
-}
-
 /* The Close Button */
 .close {
     position: absolute;
@@ -493,19 +513,43 @@ p {
     cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
+@media (max-width:640px) {}
+
+@media (min-width:768px) and (max-width:1024px) {
+    a.btn.btn-primary {
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+
+    a {
+        font-size: 2rem;
     }
 
     h1 {
-        font-size: 200%;
+        font-size: 5rem;
     }
-}
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+    h2 {
+        font-size: 3rem;
+    }
+
+    footer p {
+        font-size: 2rem;
+    }
+
+    .menu-toggle {
+        position: fixed;
+        width: 5rem;
+        height: 5rem;
+        color: var(--base-dark);
+        background: var(--base-light);
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    #sidebar-wrapper.active {
+        right: 25%;
+        width: 40vw;
+        transition: all 0.4s ease 0s;
     }
 }
